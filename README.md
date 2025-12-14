@@ -53,14 +53,13 @@ cd Fit_Plan_Backend
 ```bash
 python -m venv .venv
 ```
----
 Activate the environment:
 
-Windows
+Windows :
 ```bash
 .venv\Scripts\activate
 ```
-Linux / macOS
+Linux / macOS :
 
 
 ```bash
@@ -70,7 +69,7 @@ source .venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-<!-- -- ************************************************** -->
+
 Database Setup (MySQL)
 Ensure MySQL service is running.
 
@@ -156,25 +155,24 @@ Create the database:
             ON DELETE CASCADE
     ) ENGINE=InnoDB;
 
--- **************************************************
-Environment Variables (.env)
-Create a .env file in the backend root directory:
 
-init
+```
+
+### Environment Variables (.env)
+Create a .env file in the backend root directory:
 ```
 DATABASE_URL=mysql+pymysql://root:<your_password>@127.0.0.1:3306/fitplanhub
 JWT_SECRET_KEY=your_secret_key_here
 ```
-
 The .env file is ignored by Git and should not be committed.
 
 Run the Application
+
 ```bash
 uvicorn main:app --reload
 ```
 The server will start at:
 ```
-cpp
 http://127.0.0.1:8000 
 ```
 
@@ -235,3 +233,8 @@ A Postman collection is included in the repository to make testing easier: `FitP
 - Password reset flow is not implemented
 - Database tables are auto-created for demo purposes
 - No deployment pipeline included
+
+
+
+
+<p align="center">```Created By Sourabh Singh ```</p>

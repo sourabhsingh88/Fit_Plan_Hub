@@ -1,5 +1,16 @@
+# Python virtual environment
+.venv/
+Fit_Plan_Backend/.venv/
+
+# Python cache
 __pycache__/
+Fit_Plan_Backend/__pycache__/
 *.pyc
+
+# Environment variables
 .env
+Fit_Plan_Backend/.env
+
+# IDE files
 .idea/
-venv/
+.vscode/

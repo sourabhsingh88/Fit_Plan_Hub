@@ -1,0 +1,112 @@
+<header class="navbar">
+  <div class="container nav-inner">
+    <div class="logo">FitPlanHub</div>
+    <div class="nav-actions">
+      <button class="ghost" (click)="openLogin()">Login</button>
+      <button class="primary" (click)="openRegister()">Sign Up</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <h1>
+        Train Smarter.<br />
+        <span>Follow Real Trainers.</span>
+      </h1>
+
+      <p>
+        Structured fitness plans from verified trainers.
+        No noise. No guesswork. Just progress.
+      </p>
+
+      <div class="hero-actions">
+        <button class="primary large" (click)="openRegister()">Get Started Free</button>
+        <button class="ghost large" (click)="openLogin()">I Have an Account</button>
+      </div>
+    </div>
+
+    <div class="hero-cards">
+      <div class="card">📋 Structured Plans</div>
+      <div class="card">🔥 Follow Trainers</div>
+      <div class="card">📈 Track Progress</div>
+    </div>
+  </div>
+</section>
+
+<section class="section light">
+  <div class="container">
+    <h2 class="section-title">Why FitPlanHub</h2>
+    <p class="section-subtitle">
+      We remove randomness from fitness.
+    </p>
+
+    <div class="grid-3">
+      <div class="info-card">
+        <h3>Trainer-Driven</h3>
+        <p>Plans built by real professionals.</p>
+      </div>
+      <div class="info-card">
+        <h3>Clean Feed</h3>
+        <p>Only plans from trainers you follow.</p>
+      </div>
+      <div class="info-card">
+        <h3>Consistency First</h3>
+        <p>Designed for long-term discipline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section gray">
+  <div class="container">
+    <h2 class="section-title">How It Works</h2>
+
+    <div class="grid-3">
+      <div class="step-card">
+        <span>01</span>
+        <h4>Create Account</h4>
+        <p>Quick signup. No credit card.</p>
+      </div>
+      <div class="step-card">
+        <span>02</span>
+        <h4>Follow Trainers</h4>
+        <p>Select trainers based on goals.</p>
+      </div>
+      <div class="step-card">
+        <span>03</span>
+        <h4>Train With Structure</h4>
+        <p>Stick to proven routines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container center">
+    <h2>Start Training With Purpose</h2>
+    <p>Stop wasting time on unstructured workouts.</p>
+    <button class="primary large" (click)="openRegister()">Create Free Account</button>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container center">
+    © 2025 FitPlanHub. Built for discipline, not distraction.
+  </div>
+</footer>
+<div class="modal-backdrop" *ngIf="showLogin || showRegister" (click)="closeModal()">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <app-login
+      *ngIf="showLogin"
+      (loginSuccess)="closeModal()"
+      (switchToRegister)="switchToRegister()"
+    ></app-login>
+
+    <app-register
+      *ngIf="showRegister"
+      (registerSuccess)="closeModal()"
+      (switchToLogin)="switchToLogin()"
+    ></app-register>
+  </div>
+</div>

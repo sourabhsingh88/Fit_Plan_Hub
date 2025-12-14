@@ -1,0 +1,42 @@
+<header class="navbar">
+  <div class="nav-container">
+    <div class="brand">
+      <span class="logo-mark">FP</span>
+      <span class="logo-text">FitPlanHub</span>
+    </div>
+
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </div>
+</header>
+
+<main class="dashboard-container">
+  <h2>Trainer Dashboard</h2>
+
+  <p class="error" *ngIf="error">{{ error }}</p>
+  <p class="loading" *ngIf="loading">Loading dashboard…</p>
+
+  <div *ngIf="dashboard && !loading">
+    <div class="stats">
+      <div class="stat-card">
+        <h3>{{ dashboard.total_plans }}</h3>
+        <p>Total Plans</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>{{ dashboard.followers }}</h3>
+        <p>Followers</p>
+      </div>
+    </div>
+
+    <h3 class="section-title">Your Plans</h3>
+
+    <div class="plan-card" *ngFor="let plan of dashboard.plans">
+      <h4>{{ plan.title }}</h4>
+      <p>{{ plan.description }}</p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>© 2025 FitPlanHub · Train With Purpose</p>
+</footer>

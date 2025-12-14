@@ -1,0 +1,39 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="auth-card">
+  <h2>Create Account</h2>
+  <p class="subtitle">Start your fitness journey</p>
+
+  <input
+    type="text"
+    formControlName="name"
+    placeholder="Full name"
+  />
+
+  <input
+    type="email"
+    formControlName="email"
+    placeholder="Email address"
+  />
+
+  <div class="password-field">
+    <input
+      [type]="showPassword ? 'text' : 'password'"
+      formControlName="password"
+      placeholder="Password"
+    />
+    <span class="eye" (click)="togglePassword()">
+      {{ showPassword ? '🙈' : '👁️' }}
+    </span>
+  </div>
+
+  <button type="submit" [disabled]="loading">
+    {{ loading ? 'Creating account…' : 'Create Account' }}
+  </button>
+
+  <p class="error" *ngIf="error">{{ error }}</p>
+
+  <div class="divider">Already have an account?</div>
+
+  <button type="button" class="ghost-btn" (click)="goToLogin()">
+    Login instead
+  </button>
+</form>

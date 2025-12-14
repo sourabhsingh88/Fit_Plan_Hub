@@ -1,0 +1,33 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="auth-card">
+  <h2>Welcome Back</h2>
+  <p class="subtitle">Login to your account</p>
+
+  <input
+    type="email"
+    formControlName="email"
+    placeholder="Email address"
+  />
+
+  <div class="password-field">
+    <input
+      [type]="showPassword ? 'text' : 'password'"
+      formControlName="password"
+      placeholder="Password"
+    />
+    <span class="eye" (click)="togglePassword()">
+      {{ showPassword ? '🙈' : '👁️' }}
+    </span>
+  </div>
+
+  <button type="submit" [disabled]="loading">
+    {{ loading ? 'Logging in…' : 'Login' }}
+  </button>
+
+  <p class="error" *ngIf="error">{{ error }}</p>
+
+  <div class="divider">New here?</div>
+
+  <button type="button" class="ghost-btn" (click)="goToRegister()">
+    Create an account
+  </button>
+</form>

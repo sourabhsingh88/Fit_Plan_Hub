@@ -5,6 +5,7 @@ from models.follower import TrainerFollower
 from models.plan import Plan
 from auth.dependencies import require_user
 
+
 router = APIRouter(prefix="/users", tags=["Users"])
 
 

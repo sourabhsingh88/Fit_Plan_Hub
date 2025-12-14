@@ -1,0 +1,101 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.navbar {
+  height: 64px;
+  background: #111827;
+  color: #ffffff;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-mark {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.logo-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1px solid #9ca3af;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.container {
+  flex: 1;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.loading,
+.error,
+.empty {
+  margin-top: 20px;
+  color: #6b7280;
+}
+
+.error {
+  color: #dc2626;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  margin-bottom: 6px;
+}
+
+.footer {
+  background: #111827;
+  color: #9ca3af;
+  text-align: center;
+  padding: 18px 0;
+  font-size: 13px;
+}

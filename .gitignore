@@ -14,3 +14,8 @@ Fit_Plan_Backend/.env
 # IDE files
 .idea/
 .vscode/
+
+
+node_modules/
+frontend/.angular/
+frontend/dist/

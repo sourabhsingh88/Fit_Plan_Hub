@@ -1,0 +1,33 @@
+<header class="navbar">
+  <div class="nav-container">
+    <div class="brand">
+      <span class="logo-mark">FP</span>
+      <span class="logo-text">FitPlanHub</span>
+    </div>
+
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </div>
+</header>
+
+<main class="container">
+  <h2>User Feed</h2>
+
+  <p class="loading" *ngIf="loading">Loading feed…</p>
+  <p class="error" *ngIf="error">{{ error }}</p>
+
+  <div class="empty" *ngIf="!loading && feed.length === 0">
+    No plans available
+  </div>
+
+  <div
+    class="card"
+    *ngFor="let item of feed; trackBy: trackByPlanId"
+  >
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.description }}</p>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>© 2025 FitPlanHub · Stay Consistent</p>
+</footer>
